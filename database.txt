@@ -1,0 +1,55 @@
+CREATE TABLE products(
+
+    prod_id text,
+    title text,
+    category text,
+    price text,
+    amount text,
+    description text,
+    imageUrl text,
+    rating text,
+    PRIMARY KEY(prod_id)
+    
+);
+
+INSERT INTO products (prod_id, title, category, price, amount, description,
+imageUrl, rating) VALUES ('1','LENOVO ThinkPad E14','Laptop', '130000', '15',
+'Gaming Laptop','https://img.gigatron.rs/img/products/large/image5faab4b0075a6.png',
+'0');
+
+
+CREATE TABLE users(
+
+    user_id text,
+    first_name text,
+    last_name text,
+    email text,
+    password text,
+    username text,
+    cart text,
+    PRIMARY KEY(user_id)
+
+);
+
+CREATE TABLE orders(
+
+    products text,
+    user text
+
+);
+
+CREATE TABLE Products_Liked_By_User(
+
+    user_id text,
+    first_name text,
+    last_name text,
+    liked_prod_id text,
+    title text,
+    PRIMARY KEY(liked_prod);
+
+);
+
+CREATE TABLE Products_Rated_By_User(
+
+
+)

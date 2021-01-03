@@ -1,0 +1,22 @@
+.form-control{
+    margin: 0.6rem 0;
+}
+
+.form-control label,
+.form-control textarea,
+.form-control input{
+    display:block;
+    width:100%;
+    margin-bottom: 0.20rem;
+}
+
+.form-control input,
+.form-control textarea{
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus{
+    outline-color: #318EE0;
+}
