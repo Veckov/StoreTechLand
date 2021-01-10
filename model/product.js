@@ -18,7 +18,8 @@ class Product{
         this.rating = rating;
     }
 
-    static fetchAll(req,res,next){
+    fetchAll(req,res,next){
+        let prod;
         const query = "SELECT * FROM products";
         db.client.execute(query, [], function(err,result){
             if(err){
@@ -27,9 +28,26 @@ class Product{
             }
             else{
                 //console.log(result.rows);
-                return result.rows;
+                prod = result.rows;
+                console.log(prod);
+                return prod;
             }            
         });
+    }
+
+    AddProduct(res, id, title, category, price, amount, description, imageUrl, rating){
+        var InsertQuery = "INSERT INTO products (prod_id, title, category, price, amount, description, imageUrl, rating) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        db.client.execute(InsertQuery, [id, title, category, price,
+            amount, description, imageUrl, rating],
+            function(err,result){
+                if(err){
+                    res.status(404).send({msg:err});
+                }else{
+                    console.log("Uspesno Dodato!");
+                    res.redirect('/');
+                }
+            });
     }
 
 }

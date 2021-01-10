@@ -22,8 +22,10 @@
                             <p class="product_description"><%= prod.description %></p>
                         </div>
                         <div class="card_action">
-                            <from action="/add-to-cart" method="POST">
-                                <button type='submit' class='btn'>Add to Cart</button>
+                            <a href="/admin/edit-product/<%= prod.prod_id %>" class='btn'>Edit</a>
+                            <from action="/admin/delete-product" method="POST">
+                                <input type='hidden' value="<%= prod.prod_id %>" name="productId">
+                                <button type='submit' class='btn'>Delete</button>
                             </from>
                         </div>
                     </article>

@@ -20,16 +20,18 @@ imageUrl, rating) VALUES ('1','LENOVO ThinkPad E14','Laptop', '130000', '15',
 
 CREATE TABLE users(
 
-    user_id text,
-    first_name text,
-    last_name text,
+    username text,
     email text,
     password text,
-    username text,
+    first_name text,
+    last_name text,
     cart text,
-    PRIMARY KEY(user_id)
+    PRIMARY KEY(email)
 
 );
+INSERT INTO users (username, email, password, first_name, last_name, cart)
+VALUES ('admin', 'admin@gmail.com', 'admin123', 'AdminName', 'AdminLast', 'cart');
+
 
 CREATE TABLE orders(
 

@@ -9,5 +9,7 @@ const router = express.Router();
 
 router.get('/', shopController.getIndex);
 
+router.get('/product-detail/:id', );
+
 
 module.exports = router;
